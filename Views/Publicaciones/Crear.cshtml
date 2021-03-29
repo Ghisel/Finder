@@ -1,22 +1,24 @@
+@model Finder.Models.Publicacion
+
 <h1>Publica aqui a tu mascota</h1>
 
-
 <form action="">
-    <div>
+  <div>
     <p>Publicar un mascota:
-    <select name="Estado" required>
+      <select name="Estado" required>
 
-      <option value="">Elige una opción</option>
-      <option value="1">Perdida</option>
-      <option value="2">Encontrada</option>
-      <option value="3">En Adopcion</option>
-    </select>
+        <option value="">Elige una opción</option>
+        <option value="1">Perdida</option>
+        <option value="2">Encontrada</option>
+        <option value="3">En Adopcion</option>
+      </select>
     </p>
-    </div>
-    <div>
+  </div>
+  <div>
     <p>Especie:
-    <select name="Especie" required>
-
+    </p>
+    <select asp-for="IdEspecie" class="form-control" asp-items="ViewBag.EspecieId"></select>
+    @* <select name="Especie" required>
       <option value="">Elige una opción</option>
       <option value="1">Perro</option>
       <option value="2">Gato</option>
@@ -24,76 +26,77 @@
       <option value="4">Roedor</option>
       <option value="5">Reptil</option>
       <option value="6">Otro</option>
-    </select>
-    </p>
-    </div>
-    <div>
+      </select> *@
+
+  </div>
+  <div>
     <p>Raza:
-    <select name="Raza" >
+      <select name="Raza">
 
-      <option value="">Elige una opción</option>
-      <option value="1"></option>
-      <option value="2"></option>
-      <option value="3"></option>
-      <option value="4"></option>
-      <option value="5"></option>
-      <option value="6">Otro</option>
-    </select>
+        <option value="">Elige una opción</option>
+        <option value="1"></option>
+        <option value="2"></option>
+        <option value="3"></option>
+        <option value="4"></option>
+        <option value="5"></option>
+        <option value="6">Otro</option>
+      </select>
     </p>
-    </div>
-    <div>
+  </div>
+  <div>
     <p>Porte:
-    <select name="Porte" required>
+      <select name="Porte" required>
 
-      <option value="">Elige una opción</option>
-      <option value="1">Pequeño</option>
-      <option value="2">Mediano</option>
-      <option value="3">Grande</option>
-    </select>
+        <option value="">Elige una opción</option>
+        <option value="1">Pequeño</option>
+        <option value="2">Mediano</option>
+        <option value="3">Grande</option>
+      </select>
     </p>
-    </div>
-    <div>
+  </div>
+  <div>
     <p>Edad:
-    <select name="Edad" required>
+      <select name="Edad" required>
 
-      <option value="">Elige una opción</option>
-      <option value="1">Cachorro</option>
-      <option value="2">Adulto</option>
-      <option value="3">Adulto Mayor</option>
-      <option value="4">No sabe</option>
-    </select>
+        <option value="">Elige una opción</option>
+        <option value="1">Cachorro</option>
+        <option value="2">Adulto</option>
+        <option value="3">Adulto Mayor</option>
+        <option value="4">No sabe</option>
+      </select>
     </p>
-    </div>
-    <div>
+  </div>
+  <div>
     <p>Zona:
-    <select name="Zona" required>
+      <select name="Zona" required>
 
-      <option value="">Elige una opción</option>
-      <option value="1">Centro</option>
-      <option value="2">Norte</option>
-      <option value="3">Sur</option>
-      <option value="4">Este</option>
-      <option value="5">Oeste</option>
-    </select>
+        <option value="">Elige una opción</option>
+        <option value="1">Centro</option>
+        <option value="2">Norte</option>
+        <option value="3">Sur</option>
+        <option value="4">Este</option>
+        <option value="5">Oeste</option>
+      </select>
     </p>
-    </div>
-    <div>
-        <label for="Barrio">Barrio:</label>
-        <input type="text" name="Barrio" id="Barrio" required>
-    </div>
-    <div>
-        <label for="Fecha">Fecha:</label>
-        <input type="date" name="Fecha" id="Fecha" required>
-    </div> 
-    <div>
-      <label for="Foto">Subir una Foto:</label>
-      <input type="file" name="Foto" id="Foto">
-    </div>
-    <div>
-      <label for="Descripcion">Descripcion:</label>
-      <input type="text" name="Descripcion" id="Descripcion" placeholder="Breve informacion que consideres importante"  maxlength="100">
-    </div>
-                    
-    <input type="submit" value="Guardar">
-    <input type="reset" value="Restaurar">
+  </div>
+  <div>
+    <label for="Barrio">Barrio:</label>
+    <input type="text" name="Barrio" id="Barrio" required>
+  </div>
+  <div>
+    <label for="Fecha">Fecha:</label>
+    <input type="date" name="Fecha" id="Fecha" required>
+  </div>
+  <div>
+    <label for="Foto">Subir una Foto:</label>
+    <input type="file" name="Foto" id="Foto">
+  </div>
+  <div>
+    <label for="Descripcion">Descripcion:</label>
+    <input type="text" name="Descripcion" id="Descripcion" placeholder="Breve informacion que consideres importante"
+      maxlength="100">
+  </div>
+
+  <input type="submit" value="Guardar">
+  <input type="reset" value="Restaurar">
 </form>

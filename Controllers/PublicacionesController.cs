@@ -1,11 +1,19 @@
+using System.Linq;
+using Finder.Data;
+using Finder.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Finder.Controllers
 {
     public class PublicacionesController : Controller
     {
-        
+        private readonly ApplicationDbContext Context;
+        public PublicacionesController(ApplicationDbContext context)
+        {
+            Context = context;
+        }
         public IActionResult Publicaciones()
         {
             return View();
@@ -17,7 +25,8 @@ namespace Finder.Controllers
         [Authorize]
         public IActionResult Crear()
         {
-            return View();
+            ViewBag.EspecieId = new SelectList(Context.Especies, "IdEspecie", "Nombre");
+            return View(new Publicacion());
         }
         [Authorize]
         public IActionResult Editar()

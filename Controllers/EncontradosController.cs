@@ -1,10 +1,14 @@
+using Finder.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Finder.Controllers
 {
     public class EncontradosController : PublicacionesController
     {
-        
+        public EncontradosController(ApplicationDbContext context) : base(context)
+        {
+        }
+
         // public IActionResult Publicaciones()
         // {
         //     return View();

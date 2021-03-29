@@ -2,12 +2,16 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Finder.Models;
+using Finder.Data;
 
 namespace Finder.Controllers
 {
     public class EnAdopcionController : PublicacionesController
     {
-        
+
+        public EnAdopcionController(ApplicationDbContext context) : base(context)
+        {
+        }
         // public IActionResult Publicaciones()
         // {
         //     return View();
